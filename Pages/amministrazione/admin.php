@@ -218,12 +218,15 @@ if ($res_count) {
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             z-index: 1000;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.2s ease;
+            overflow-y: auto;
+            padding: var(--space-4);
+            box-sizing: border-box;
         }
 
         .modal-overlay.show {
@@ -240,6 +243,9 @@ if ($res_count) {
             box-shadow: var(--shadow-xl);
             transform: translateY(-20px);
             transition: transform 0.2s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: auto;
         }
 
         .modal-overlay.show .modal-content {
